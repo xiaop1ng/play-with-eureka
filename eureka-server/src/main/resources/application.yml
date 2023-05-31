@@ -1,0 +1,43 @@
+spring:
+  application:
+    # eurka 3 节点高可用模式
+    name: eurka-server
+---
+# node1
+spring:
+  profiles: node1
+server:
+  port: 8761
+eureka:
+  instance:
+    # 指定 profile=node1时，将 node1 注册到 node2 和 node3 上
+    hostname: node1
+  client:
+    serviceUrl:
+      defaultZone: http://node2:18761/eureka/,http://node3:28761/eureka/
+---
+# node2
+spring:
+  profiles: node2
+server:
+  port: 18761
+eureka:
+  instance:
+    # 指定 profile=node2时，将 node2 注册到 node1 和 node3 上
+    hostname: node2
+  client:
+    serviceUrl:
+      defaultZone: http://node1:8761/eureka/,http://node3:28761/eureka/
+---
+# node3
+spring:
+  profiles: node3
+server:
+  port: 28761
+eureka:
+  instance:
+    # 指定 profile=node3时，将 node3 注册到 node1 和 node2 上
+    hostname: node3
+  client:
+    serviceUrl:
+      defaultZone: http://node1:8761/eureka/,http://node2:18761/eureka/

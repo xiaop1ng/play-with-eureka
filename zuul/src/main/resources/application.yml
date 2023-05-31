@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: zuul
+server:
+  port: 8088
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node1:18761/eureka/,http://node2:18761/eureka/,http://node3:28761/eureka/
+CROS: true
+zuul:
+  host:
+    connect-timeout-millis: 600000
+    socket-timeout-millis: 600000
+  prefix: /api
+  routes:
+    goods:
+      # 以/api/goods/ 开头的请求都转发给goods服务
+      service-id: goods
+      path: /goods/**
+    order:
+      # 以/api/order/ 开头的请求都转发给order服务
+      service-id: order
+      path: /order/**

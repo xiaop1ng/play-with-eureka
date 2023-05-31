@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: order
+server:
+  port: 8080
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node1:18761/eureka/,http://node2:18761/eureka/,http://node3:28761/eureka/
