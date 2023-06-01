@@ -4,7 +4,7 @@ spring:
 goods:
   price: 1499
 server:
-  port: 80
+  port: 81
 eureka:
   client:
     serviceUrl:

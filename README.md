@@ -3,7 +3,8 @@
 
 - order 订单服务
 - goods 商品服务
-- zuul 网关
+- ~~zuul 网关~~
+- gateway 网关
 - eureka-server 服务发现
 
 
@@ -25,10 +26,15 @@
 
 ## 版本选择
 
-当前 SpringBoot 版本：2.0.4.RELEASE
+使用[在线初始化工具](https://start.spring.io/) 可以很方便确认 SpringBoot 和 SpringCloud 的对应版本
 
-Spring Cloud Version
-> Spring Cloud Finchley
+
+升级 SpringBoot 版本：`2.7.12`, Spring Cloud 版本 `2021.0.7`
+
+```
+  <spring-boot.version>2.7.12</spring-boot.version>
+  <spring-cloud.version>2021.0.7</spring-cloud.version>
+```
 
 ## 集群部署 eureka-server
 
@@ -100,9 +106,9 @@ req: http://127.0.0.1:80/v1/price
 res: 1499
 req: http://127.0.0.1:8080/v1/create
 res: 创建订单成功，订单金额：1499
-req: http://127.0.0.1:8088/api/goods/v1/price
+req: http://127.0.0.1:8088/goods/v1/price
 res: 1499
-req: http://127.0.0.1:8088/api/order/v1/create
+req: http://127.0.0.1:8088/order/v1/create
 res: 创建订单成功，订单金额：1499
 ```
 

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 是否从注册中心读取服务，只要你的路径中以微服务的服务名称开头，都会自动转发到该服务上去
+          enabled: true
+          # eureka 中服务名默认为大写 服务名大写转小写
+          lowerCaseServiceId: true
+server:
+  port: 8088
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:18761/eureka/,http://172.16.0.208:8761/eureka/
