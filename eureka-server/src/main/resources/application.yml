@@ -17,6 +17,9 @@ eureka:
     preferIpAddress: true
     # 配置使用指定IP
     ip-address: 172.16.0.208
+  server:
+    # 关闭自我保护机制，默认是打开的
+    enable-self-preservation: false
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:18761/eureka/
@@ -35,6 +38,9 @@ eureka:
     preferIpAddress: true
     # 配置使用指定IP
     ip-address: 127.0.0.1
+  server:
+    # 关闭自我保护机制，默认是打开的
+    enable-self-preservation: false
   client:
     serviceUrl:
       defaultZone: http://172.16.0.208:8761/eureka/
