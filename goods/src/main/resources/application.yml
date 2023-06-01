@@ -4,8 +4,8 @@ spring:
 goods:
   price: 1499
 server:
-  port: 81
+  port: 80
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://node1:18761/eureka/,http://node2:18761/eureka/,http://node3:28761/eureka/
+      defaultZone: http://127.0.0.1:18761/eureka/,http://172.16.0.208:8761/eureka/
