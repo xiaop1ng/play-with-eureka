@@ -118,6 +118,17 @@ res: 创建订单成功，订单金额：1499
     
     <dependencies>
     
+        <!-- 服务注册服务端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    
+        <!-- 服务注册客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
     </dependencies>
     
     <dependencyManagement>
