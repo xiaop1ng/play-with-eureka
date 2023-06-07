@@ -9,6 +9,7 @@ spring:
 server:
   port: 8761
 eureka:
+  environment: 非测试环境，谨慎操作
   instance:
     # 指定 profile=node1时，将 node1 注册到 node2 上
     hostname: node1
@@ -30,6 +31,7 @@ spring:
 server:
   port: 18761
 eureka:
+  environment: 非测试环境，谨慎操作
   instance:
     # 指定 profile=node2时，将 node2 注册到 node1 上
     hostname: node2
