@@ -11,6 +11,10 @@ server:
 eureka:
   environment: 非测试环境，谨慎操作
   instance:
+    # 心跳间隔，默认值为 30s
+    lease-renewal-interval-in-seconds: 5
+    # 没有心跳的淘汰实践，默认值为 90s
+    lease-expiration-duration-in-seconds: 15
     # 指定 profile=node1时，将 node1 注册到 node2 上
     hostname: node1
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
@@ -21,6 +25,8 @@ eureka:
   server:
     # 关闭自我保护机制，默认是打开的
     enable-self-preservation: false
+    # 清理无效节点的频率，默认值为 60s
+    eviction-interval-timer-in-ms: 5000
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:18761/eureka/
@@ -33,6 +39,10 @@ server:
 eureka:
   environment: 非测试环境，谨慎操作
   instance:
+    # 心跳间隔，默认值为 30s
+    lease-renewal-interval-in-seconds: 5
+    # 没有心跳的淘汰实践，默认值为 90s
+    lease-expiration-duration-in-seconds: 15
     # 指定 profile=node2时，将 node2 注册到 node1 上
     hostname: node2
     instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
@@ -43,6 +53,8 @@ eureka:
   server:
     # 关闭自我保护机制，默认是打开的
     enable-self-preservation: false
+    # 清理无效节点的频率，默认值为 60s
+    eviction-interval-timer-in-ms: 5000
   client:
     serviceUrl:
       defaultZone: http://172.16.0.208:8761/eureka/
