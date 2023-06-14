@@ -1,10 +1,16 @@
 spring:
   application:
     name: goods
+  sleuth:
+    sampler:
+      # 采样率 100%
+      probability: 1
+      # 每秒最多采样 100 个 trace
+      rate: 100
 goods:
   price: 1499
 server:
-  port: 81
+  port: 80
 eureka:
   client:
     serviceUrl:

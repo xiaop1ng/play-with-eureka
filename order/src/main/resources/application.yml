@@ -1,6 +1,12 @@
 spring:
   application:
     name: order
+  sleuth:
+    sampler:
+      # 采样率 100%
+      probability: 1
+      # 每秒最多采样 100 个 trace
+      rate: 100
 server:
   port: 8080
 eureka:

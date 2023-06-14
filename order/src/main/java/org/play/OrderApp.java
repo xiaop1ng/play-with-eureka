@@ -1,6 +1,8 @@
 package org.play;
 
 import org.play.service.GoodsService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,10 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableFeignClients
 public class OrderApp {
 
+    private Logger log = LoggerFactory.getLogger(OrderApp.class);
+
     @Autowired
     GoodsService goodsService;
     @GetMapping("/create")
     public String create() {
+        log.info("create order invoke");
         // 新建订单，获取 goods 服务的商品价格
         Long price = goodsService.getPrice();
         return "创建订单成功，订单金额：" + price;

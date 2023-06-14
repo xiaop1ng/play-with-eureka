@@ -1,6 +1,12 @@
 spring:
   application:
     name: gateway
+  sleuth:
+    sampler:
+      # 采样率 100%
+      probability: 1
+      # 每秒最多采样 100 个 trace
+      rate: 100
   cloud:
     gateway:
       discovery:

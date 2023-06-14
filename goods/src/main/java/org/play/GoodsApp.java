@@ -1,5 +1,7 @@
 package org.play;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 public class GoodsApp {
 
+
+    private Logger log = LoggerFactory.getLogger(GoodsApp.class);
+
     @Value("${goods.price:100}")
     private Long price;
 
@@ -23,6 +28,7 @@ public class GoodsApp {
 
     @GetMapping("/price")
     public Long get() {
+        log.info("get price invoke");
         return price;
     }
 
