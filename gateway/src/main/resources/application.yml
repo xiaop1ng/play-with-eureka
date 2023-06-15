@@ -7,6 +7,11 @@ spring:
       probability: 1
       # 每秒最多采样 100 个 trace
       rate: 100
+  zipkin:
+    sender:
+      # 使用 web api 方式发送给 zipkin
+      type: web
+    base-url: http://172.18.16.1:9411
   cloud:
     gateway:
       discovery:
