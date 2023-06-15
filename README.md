@@ -6,6 +6,7 @@
 - ~~zuul 网关~~
 - gateway 网关
 - eureka-server 服务发现
+- zipkin 链路追踪（with sleuth）
 
 
 ## todo
