@@ -15,6 +15,14 @@ spring:
 server:
   port: 8080
 eureka:
+  instance:
+    # 心跳间隔，默认值为 30s
+    lease-renewal-interval-in-seconds: 5
+    # 没有心跳的淘汰实践，默认值为 90s
+    lease-expiration-duration-in-seconds: 15
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
   client:
+    # 定时刷新本地缓存时间，默认值为 30s
+    registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://127.0.0.1:18761/eureka/,http://172.16.0.208:8761/eureka/
