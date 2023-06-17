@@ -96,8 +96,10 @@ eureka:
 配置本地 host 后，启动三个节点
 
 > java -jar eureka-server-1.0-SNAPSHOT.jar --spring.profiles.active=node1
-java -jar eureka-server-1.0-SNAPSHOT.jar --spring.profiles.active=node2
-java -jar eureka-server-1.0-SNAPSHOT.jar --spring.profiles.active=node3
+
+> java -jar eureka-server-1.0-SNAPSHOT.jar --spring.profiles.active=node2
+
+> java -jar eureka-server-1.0-SNAPSHOT.jar --spring.profiles.active=node3
 
 访问 http://127.0.0.1:8761/ 可以发现 EURKA-SERVER 有 3 个实例，这时集群就搭建成功了
 
