@@ -45,7 +45,7 @@ eureka:
     lease-expiration-duration-in-seconds: 15
     # 指定 profile=node2时，将 node2 注册到 node1 上
     hostname: node2
-    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
     # 优先使用IP地址方式进行注册服务
     preferIpAddress: true
     # 配置使用指定IP
