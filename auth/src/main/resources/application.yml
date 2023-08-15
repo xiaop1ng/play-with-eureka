@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: auth
+  security:
+    user:
+      name: admin
+      password: 1234
+      roles: admin
+server:
+  port: 2023
+
